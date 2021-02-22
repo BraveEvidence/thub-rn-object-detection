@@ -11,11 +11,19 @@ npm install react-native-rn-thub-objectdetection
 ## Usage
 
 ```js
-import RnThubObjectdetection from "react-native-rn-thub-objectdetection";
+import RnThubObjectdetection from 'react-native-rn-thub-objectdetection';
 
-// ...
-
-const result = await RnThubObjectdetection.multiply(3, 7);
+RnThubObjectdetection.objectDetection(
+  imagePath,
+  (data) => {
+    setProgressBar(false);
+    Alert.alert('', data.toString());
+  },
+  (errorMessage) => {
+    setProgressBar(false);
+    Alert.alert('', errorMessage);
+  }
+);
 ```
 
 ## Contributing
